@@ -1,0 +1,24 @@
+
+server:
+  port: 7001
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:60000/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    prefer-ip-address: true
+spring:
+  datasource:
+    password: gyc670894
+    username: root
+    url: jdbc:mysql://localhost:3306/movie?characterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: microservices-provider-user
+  jpa:
+    show-sql: true
+  http:
+    multipart:
+      max-file-size: 10000MB
+
