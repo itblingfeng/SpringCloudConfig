@@ -1,37 +1,6 @@
 spring:
   application:
     name: EUREKA
----
-spring:
-  profiles: peer1
-eureka:
-  client:
-    service-url:
-      defaultZone: http://peer2:8001/eureka,http://peer3:8002/eureka
-server:
-  port: 8000
----
-spring:
-  profiles: peer2
-eureka:
-  client:
-    service-url:
-      defaultZone: http://peer1:8000/eureka,http://peer3:8002/eureka
-server:
-  port: 8001
----
-spring:
-  profiles: peer3
-eureka:
-  client:
-    service-url:
-      defaultZone: http://peer1:8000/eureka,http://peer2:8001/eureka
-server:
-  port: 8002
-
----
-spring:
-  profiles: eureka
 eureka:
   client:
     service-url:
@@ -42,4 +11,3 @@ eureka:
     prefer-ip-address: true
 server:
   port: 60000
----
