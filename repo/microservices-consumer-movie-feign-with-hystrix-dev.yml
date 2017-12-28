@@ -1,0 +1,9 @@
+server:
+  port: 11000
+spring:
+  application:
+    name: microservices-consumer-movie-feign-with-hystrix
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:60000/eureka
